@@ -100,14 +100,14 @@ export default function Navbar() {
           {/* Mobile button */}
           <button
             onClick={() => setOpen(true)}
-            className="md:hidden p-3 text-gray-300"
+            className="lg:hidden p-1 text-gray-300"
             aria-label="Open menu"
           >
             <MenuIcon />
           </button>
 
           {/* Desktop nav */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-8">
             {NAV_ITEMS.map((item) => (
               <button
                 key={item.name}

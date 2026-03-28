@@ -1,5 +1,22 @@
 import { motion } from "framer-motion";
 
+// Main Component
+export default function Hero() {
+  return (
+    <div className="relative min-h-screen bg-gradient-to-br from-gray-900 via-slate-900 to-gray-800 text-white overflow-hidden flex flex-col">
+      <AnimatedBackground />
+      <div className="relative z-10 flex-1 flex items-center">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
+            <HeroContent />
+            <Terminal />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // Constants
 const CODE_SYMBOLS = ["{}", "[]", "<>", "()", "&&", "||", "=>", "++"];
 const CODE_SNIPPETS = [
@@ -25,7 +42,7 @@ const getRandomSymbol = () =>
 
 // Subcomponents
 const AnimatedBackground = () => (
-  <div id="hero" className="max-h-[100vh] absolute inset-0 overflow-hidden">
+  <div id="hero" className="min-h-[100vh] absolute inset-0 overflow-hidden">
     {Array.from({ length: ANIMATION_COUNT }).map((_, i) => (
       <motion.div
         key={i}
@@ -306,21 +323,3 @@ const HeroContent = () => (
     <CTAButtons />
   </motion.div>
 );
-
-// Main Component
-export default function Hero() {
-  return (
-    <div className="relative min-h-screen h-screen bg-gradient-to-br from-gray-900 via-slate-900 to-gray-800 text-white overflow-hidden flex flex-col">
-      <AnimatedBackground />
-
-      <div className="relative z-10 flex-1 flex items-center">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
-            <HeroContent />
-            <Terminal />
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}

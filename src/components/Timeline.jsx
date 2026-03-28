@@ -29,7 +29,7 @@ export default function Timeline() {
     },
     {
       year: "Present",
-      title: "Focus on Frontend Web Development",
+      title: "Focus on Front-End Path",
       desc: "Focusing in frontend web development, creating responsive and interactive web applications while continuously improving performance, UI/UX, and modern development workflows.",
       icon: "💼",
     },
@@ -73,7 +73,7 @@ export default function Timeline() {
                   className="flex flex-col items-center w-full focus:outline-none"
                 >
                   <div
-                    className={`w-12 h-12 lg:w-16 lg:h-16 rounded-full flex items-center justify-center text-xl transition-all duration-300
+                    className={`w-12 h-12 lg:w-16 lg:h-16 rounded-full flex items-center justify-center text-xl transition-all duration-300 cursor-pointer
                       ${
                         isActive
                           ? "bg-gradient-to-br from-blue-500 to-green-500 scale-110 shadow-lg shadow-green-500/30"
@@ -97,8 +97,8 @@ export default function Timeline() {
 
         {/* Content Card */}
         <div className="mt-16 flex justify-center">
-          <div className="max-w-xl w-full bg-slate-900 border border-slate-800 rounded-2xl p-8 shadow-xl transition-all duration-500">
-            <h3 className="text-2xl font-semibold mb-3">
+          <div className="max-w-xl w-full min-h-70 lg:min-h-0 bg-slate-900 border border-slate-800 rounded-2xl p-8 shadow-xl transition-all duration-500 ">
+            <h3 className="text-xl lg:text-2xl font-semibold mb-3">
               {data[active].title}
             </h3>
             <p className="text-slate-400 leading-relaxed text-justify">
