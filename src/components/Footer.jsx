@@ -24,7 +24,7 @@ const BrandSection = () => (
     viewport={{ once: true }}
     className="text-center md:text-left"
   >
-    <h2 className="text-xl sm:text-2xl md:text-2xl font-bold tracking-tight">
+    <h2 className="text-xl sm:text-2xl md:text-2xl px-4 lg:px-0 font-bold tracking-tight">
       Thanks for Scrolling This Far
     </h2>
     <p className="mt-2 text-sm px-4 lg:px-0 sm:text-base md:text-md text-gray-300 lg:pr-32 text-justify">
@@ -64,7 +64,7 @@ const SocialSection = () => (
     viewport={{ once: true }}
     className="flex justify-center md:justify-end gap-3 sm:gap-4"
   >
-    <ul className="text-md sm: hidden lg:block list-disc text-gray-300">
+    <ul className="text-md hidden md:block list-disc text-gray-300">
       <li className="text-2xl font-bold list-none text-white">What I Do</li>
       <li className="hover:text-gray-500">
         Develop Responsive Websites from Scratch

@@ -1,17 +1,17 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-import jetson from "../assets/achievements/jetson.png";
-import english from "../assets/achievements/english.jpg";
-import binar from "../assets/achievements/binar.png";
-import orbit from "../assets/achievements/orbit.png";
-import rakamin from "../assets/achievements/rakamin.png";
-import rakaminweb from "../assets/achievements/rakaminweb.png";
-import dicodingweb from "../assets/achievements/dicodingweb.png";
-import dicodingpython from "../assets/achievements/dicodingpython.png";
-import dicodingdata from "../assets/achievements/dicodingdata.png";
-import diffusion from "../assets/achievements/diffusion.png";
-import reqroom from "../assets/achievements/reqroom.png";
+import jetson from "../assets/achievements/jetson.webp";
+import english from "../assets/achievements/english.webp";
+import binar from "../assets/achievements/binar.webp";
+import orbit from "../assets/achievements/orbit.webp";
+import rakamin from "../assets/achievements/rakamin.webp";
+import rakaminweb from "../assets/achievements/rakaminweb.webp";
+import dicodingweb from "../assets/achievements/dicodingweb.webp";
+import dicodingpython from "../assets/achievements/dicodingpython.webp";
+import dicodingdata from "../assets/achievements/dicodingdata.webp";
+import diffusion from "../assets/achievements/diffusion.webp";
+import reqroom from "../assets/achievements/reqroom.webp";
 
 const achievements = [
   { id: 1, title: "English Proficiency", image: english },

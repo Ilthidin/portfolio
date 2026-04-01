@@ -290,7 +290,7 @@ const Terminal = () => (
     <FloatingIcon
       position="top"
       delay={0}
-      gradient="bg-gradient-to-br from-blue-500 to-purple-500"
+      gradient="bg-gradient-to-br from-blue-500 to-purple-500 hidden lg:flex"
     >
       <CodeIcon />
     </FloatingIcon>
@@ -298,7 +298,7 @@ const Terminal = () => (
     <FloatingIcon
       position="bottom"
       delay={0.5}
-      gradient="bg-gradient-to-br from-green-500 to-teal-500"
+      gradient="bg-gradient-to-br from-green-500 to-teal-500 hidden lg:flex"
     >
       <TerminalIcon />
     </FloatingIcon>
