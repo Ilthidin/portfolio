@@ -1,6 +1,21 @@
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail } from "lucide-react";
 
+// Main Component
+export default function Footer() {
+  return (
+    <footer className="bg-gray-800 text-white py-4 px-4 lg:px-18 2xl:px-0">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center">
+          <BrandSection />
+          <SocialSection />
+        </div>
+        <CopyrightSection />
+      </div>
+    </footer>
+  );
+}
+
 // Constants
 const SOCIAL_LINKS = [
   { icon: Github, href: "#", label: "GitHub" },
@@ -101,17 +116,3 @@ const CopyrightSection = () => {
   );
 };
 
-// Main Component
-export default function Footer() {
-  return (
-    <footer className="bg-gray-800 text-white py-4 px-4 lg:px-18 2xl:px-0">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center">
-          <BrandSection />
-          <SocialSection />
-        </div>
-        <CopyrightSection />
-      </div>
-    </footer>
-  );
-}
