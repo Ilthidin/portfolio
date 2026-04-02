@@ -1,12 +1,12 @@
 import { motion, useMotionValue, useAnimationFrame } from "framer-motion";
 import { useRef, useLayoutEffect, useState } from "react";
 
-import js from "../assets/js.webp";
-import react from "../assets/react.webp";
-import tailwind from "../assets/tailwind.webp";
-import framer from "../assets/motion.webp";
-import ts from "../assets/ts.webp";
-import github from "../assets/github.webp";
+import js from "../../assets/js.webp";
+import react from "../../assets/react.webp";
+import tailwind from "../../assets/tailwind.webp";
+import framer from "../../assets/motion.webp";
+import ts from "../../assets/ts.webp";
+import github from "../../assets/github.webp";
 
 const TECH_STACK = [
   { name: "React", src: react },
