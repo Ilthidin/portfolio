@@ -2,15 +2,15 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-import estate from "src/assets/projects/estate.webp";
-import hmtif from "src/assets/projects/hmtif.webp";
-import taweb from "src/assets/projects/taweb.webp";
-import taandroid from "src/assets/projects/taandroid.webp";
-import moviemax from "src/assets/projects/moviemax.webp";
-import crypto from "src/assets/projects/4crypto.webp";
-import parksense from "src/assets/projects/parksense.webp";
-import ghibli from "src/assets/projects/ghibli.webp";
-import reqroom from "src/assets/projects/reqroom.webp";
+import estate from "/src/assets/projects/estate.webp";
+import hmtif from "/src/assets/projects/hmtif.webp";
+import taweb from "/src/assets/projects/taweb.webp";
+import taandroid from "/src/assets/projects/taandroid.webp";
+import moviemax from "/src/assets/projects/moviemax.webp";
+import crypto from "/src/assets/projects/4crypto.webp";
+import parksense from "/src/assets/projects/parksense.webp";
+import ghibli from "/src/assets/projects/ghibli.webp";
+import reqroom from "/src/assets/projects/reqroom.webp";
 
 const PROJECTS = [
   {
