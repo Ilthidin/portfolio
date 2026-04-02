@@ -5,8 +5,8 @@ export default function Hero() {
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-gray-900 via-slate-900 to-gray-800 text-white overflow-hidden flex flex-col">
       <AnimatedBackground />
-      <div className="relative z-10 flex-1 flex items-center">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 flex-1 flex items-center overflow-hidden w-full">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 w-full min-w-0">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
             <HeroContent />
             <Terminal />
@@ -164,8 +164,8 @@ const FloatingIcon = ({ position, delay, gradient, children }) => (
     }}
     className={`absolute ${
       position === "top"
-        ? "-top-8 -left-4 2xl:-bottom-8 2xl:-right-6"
-        : "-bottom-8 -right-4 2xl:-bottom-8 2xl:-right-6"
+        ? "-top-8 -left-0 2xl:-bottom-8 2xl:-left-6"
+        : "-bottom-8 -right-0 2xl:-bottom-8 2xl:-right-6"
     } w-12 h-12 md:w-16 md:h-16 ${gradient} rounded-xl flex items-center justify-center shadow-xl`}
   >
     {children}
@@ -199,7 +199,7 @@ const TerminalIcon = () => (
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={2}
-      d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+      d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2z"
     />
   </svg>
 );
@@ -222,7 +222,7 @@ const TerminalHeader = () => (
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth={2}
-          d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+          d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 002 2z"
         />
       </svg>
       <span className="text-xs sm:text-sm text-gray-400 font-mono">
@@ -280,12 +280,13 @@ const TerminalContent = () => (
   </div>
 );
 
+// Terminal: y-only animation on mobile to prevent horizontal overflow
 const Terminal = () => (
   <motion.div
-    initial={{ opacity: 0, x: 50 }}
-    animate={{ opacity: 1, x: 0 }}
+    initial={{ opacity: 0, y: 40 }}
+    animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.8, delay: 0.4 }}
-    className="relative "
+    className="relative min-w-0 w-full"
   >
     <FloatingIcon
       position="top"
@@ -310,12 +311,13 @@ const Terminal = () => (
   </motion.div>
 );
 
+// HeroContent: y-only animation on mobile to prevent horizontal overflow
 const HeroContent = () => (
   <motion.div
-    initial={{ opacity: 0, x: -50 }}
-    animate={{ opacity: 1, x: 0 }}
+    initial={{ opacity: 0, y: 40 }}
+    animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.8, delay: 0.2 }}
-    className="space-y-4 sm:space-y-6"
+    className="space-y-4 sm:space-y-6 min-w-0"
   >
     <Badge />
     <Heading />

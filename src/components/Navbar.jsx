@@ -76,20 +76,16 @@ export default function Navbar() {
   const scrollToSection = (id) => {
     const el = document.getElementById(id);
     if (!el) return;
-
-    el.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
     <>
-      {/* NAVBAR */}
+      {/* NAVBAR — uses opacity fade only, no y-translate that can cause layout shift */}
       <motion.nav
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 1 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
         className="fixed top-0 left-0 right-0 z-[10000] bg-gray-900"
       >
         <div className="max-w-7xl mx-auto px-4 xl:px-8 2xl:px-0 h-16 flex items-center justify-between">

@@ -148,7 +148,7 @@ export default function ProjectCarousel() {
               </div>
 
               {/* RIGHT: Image with Single Left Slash */}
-              <div className="relative h-[200px] lg:h-[300px] 2xl:h-[360px] w-full">
+              <div className="relative h-50 lg:h-75 2xl:h-90 w-full">
                 <div className="absolute inset-0 overflow-hidden mx-4 md:mx-0 md:px-4">
                   <img
                     src={project.img}

@@ -8,10 +8,10 @@ import Achievements from "./components/Achievements";
 import Tech from "./components/Tech";
 import Contact from "./components/Contact";
 import Services from "./components/Services.jsx";
-
+ 
 function App() {
   return (
-    <>
+    <div className="overflow-x-hidden w-full">
       <Navbar />
       <Hero />
       <About />
@@ -22,8 +22,8 @@ function App() {
       <Projects />
       <Contact />
       <Footer />
-    </>
+    </div>
   );
 }
-
+ 
 export default App;
