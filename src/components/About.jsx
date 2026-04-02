@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import profileImg from "../../assets/profile.webp";
+import profileImg from "src/assets/profile.webp";
 
 const DETAILS_DATA = [
   { label: "Professional Experience", value: "1 Year+" },
