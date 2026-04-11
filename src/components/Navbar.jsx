@@ -45,7 +45,7 @@ const XIcon = () => (
 const GradientBorderButton = ({ onClick, children }) => (
   <button
     onClick={onClick}
-    className="relative inline-block rounded-full bg-gradient-to-r from-green-400 to-blue-500 p-[1px] overflow-hidden"
+    className="relative inline-block rounded-full bg-linear-to-r from-green-400 to-blue-500 p-px overflow-hidden"
   >
     <motion.span
       initial="rest"
@@ -59,7 +59,7 @@ const GradientBorderButton = ({ onClick, children }) => (
           hover: { scaleX: 1 },
         }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className="absolute inset-0 origin-left bg-gradient-to-r from-green-500 to-blue-500"
+        className="absolute inset-0 origin-left bg-linear-to-r from-green-500 to-blue-500"
       />
       <span className="relative z-10 cursor-pointer">{children}</span>
     </motion.span>
@@ -86,10 +86,10 @@ export default function Navbar() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
-        className="fixed top-0 left-0 right-0 z-[10000] bg-gray-900"
+        className="fixed top-0 left-0 right-0 z-10000 bg-gray-900"
       >
         <div className="max-w-7xl mx-auto px-4 xl:px-8 2xl:px-0 h-16 flex items-center justify-between">
-          <span className="text-xl font-bold bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent 2xl:text-2xl">
+          <span className="text-xl font-bold bg-linear-to-r from-green-400 to-blue-500 bg-clip-text text-transparent 2xl:text-2xl">
             Muhammad Syihab Habibi
           </span>
 
@@ -128,10 +128,10 @@ export default function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[10001] bg-gray-900"
+            className="fixed inset-0 z-10001 bg-gray-900"
           >
             <div className="h-16 px-4 flex items-center justify-between border-b border-gray-700">
-              <span className="text-xl font-bold bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent">
+              <span className="text-xl font-bold bg-linear-to-r from-green-400 to-blue-500 bg-clip-text text-transparent">
                 Muhammad Syihab Habibi
               </span>
 

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 // Main Component
 export default function Hero() {
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-gray-900 via-slate-900 to-gray-800 text-white overflow-hidden flex flex-col">
+    <div className="relative min-h-screen bg-linear-to-br from-gray-900 via-slate-900 to-gray-800 text-white overflow-hidden flex flex-col">
       <AnimatedBackground />
       <div className="relative z-10 flex-1 flex items-center overflow-hidden w-full">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 w-full min-w-0">
@@ -42,7 +42,7 @@ const getRandomSymbol = () =>
 
 // Subcomponents
 const AnimatedBackground = () => (
-  <div id="hero" className="min-h-[100vh] absolute inset-0 overflow-hidden">
+  <div id="hero" className="min-h-screen absolute inset-0 overflow-hidden">
     {Array.from({ length: ANIMATION_COUNT }).map((_, i) => (
       <motion.div
         key={i}
@@ -109,12 +109,12 @@ const Heading = () => (
     className="text-3xl sm:text-3xl md:text-5xl 2xl:text-6xl font-bold leading-tight"
   >
     Turn Your
-    <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500">
+    <span className="text-transparent bg-clip-text bg-linear-to-r from-green-400 to-blue-500">
       {" "}
       Idea{" "}
     </span>
     Into Wonderful
-    <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500">
+    <span className="text-transparent bg-clip-text bg-linear-to-r from-green-400 to-blue-500">
       {" "}
       Website
     </span>
@@ -142,7 +142,7 @@ const CTAButtons = () => (
     <motion.button
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      className="px-6 py-3 sm:px-16 sm:py-4 text-sm sm:text-base bg-gradient-to-r from-green-500 to-blue-500 rounded-lg font-semibold shadow-lg shadow-green-500/25 hover:shadow-green-500/40 transition-shadow"
+      className="px-6 py-3 sm:px-16 sm:py-4 text-sm sm:text-base bg-linear-to-r from-green-500 to-blue-500 rounded-lg font-semibold shadow-lg shadow-green-500/25 hover:shadow-green-500/40 transition-shadow"
       onClick={() => scrollToSection("about")}
     >
       Get Started
@@ -150,7 +150,7 @@ const CTAButtons = () => (
   </motion.div>
 );
 
-const FloatingIcon = ({ position, delay, gradient, children }) => (
+const FloatingIcon = ({ position, delay, linear, children }) => (
   <motion.div
     animate={{
       y: [0, position === "top" ? -20 : 20, 0],
@@ -164,9 +164,9 @@ const FloatingIcon = ({ position, delay, gradient, children }) => (
     }}
     className={`absolute ${
       position === "top"
-        ? "-top-8 -left-0 2xl:-bottom-8 2xl:-left-6"
-        : "-bottom-8 -right-0 2xl:-bottom-8 2xl:-right-6"
-    } w-12 h-12 md:w-16 md:h-16 ${gradient} rounded-xl flex items-center justify-center shadow-xl`}
+        ? "-top-8 left-0 2xl:-bottom-8 2xl:-left-6"
+        : "-bottom-8 right-0 2xl:-bottom-8 2xl:-right-6"
+    } w-12 h-12 md:w-16 md:h-16 ${linear} rounded-xl flex items-center justify-center shadow-xl`}
   >
     {children}
   </motion.div>
@@ -291,7 +291,7 @@ const Terminal = () => (
     <FloatingIcon
       position="top"
       delay={0}
-      gradient="bg-gradient-to-br from-blue-500 to-purple-500 hidden lg:flex"
+      linear="bg-linear-to-br from-blue-500 to-purple-500 hidden lg:flex"
     >
       <CodeIcon />
     </FloatingIcon>
@@ -299,7 +299,7 @@ const Terminal = () => (
     <FloatingIcon
       position="bottom"
       delay={0.5}
-      gradient="bg-gradient-to-br from-green-500 to-teal-500 hidden lg:flex"
+      linear="bg-linear-to-br from-green-500 to-teal-500 hidden lg:flex"
     >
       <TerminalIcon />
     </FloatingIcon>

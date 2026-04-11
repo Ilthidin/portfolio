@@ -47,7 +47,7 @@ const card = {
 
 export default function Services() {
   return (
-    <section className="w-full bg-gradient-to-bl from-gray-900 via-slate-800 to-gray-900 py-20 bg-gray-950 text-white">
+    <section className="w-full bg-linear-to-bl from-gray-900 via-slate-800 to-gray-900 py-8 lg:py-16 bg-gray-950 text-white">
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
           Services

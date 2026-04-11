@@ -103,7 +103,7 @@ const TimelineLine = () => {
           top-4
           bottom-4
           h-150
-          w-[12px]
+          w-3
           bg-gray-600
           -translate-x-1/2
           origin-top
@@ -123,7 +123,7 @@ const TimelineLine = () => {
           top-1/2
           left-2
           right-2
-          h-[12px]
+          h-3
           bg-gray-600
           -translate-y-1/2
           origin-left
@@ -151,10 +151,10 @@ const TimelineCard = ({ event, index, isActive, breakpoint, onClick }) => {
       }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
       className="relative z-10 bg-gray-800 rounded-xl p-3 m-2 sm:p-4 md:p-5 shadow-lg shadow-black/40 cursor-pointer overflow-hidden
-                 min-w-[160px] max-h-[130px]
-                 lg:min-h-[260px] lg:max-h-[260px]
-                 lg:min-w-[200px] lg:max-w-[200px]
-                 xl:min-w-[240px] xl:max-w-[240px]"
+                 min-w-40 max-h-32.5
+                 lg:min-h-65 lg:max-h-65
+                 lg:min-w-50 lg:max-w-50
+                 xl:min-w-60 xl:max-w-60"
     >
       <span className="text-xs sm:text-sm md:text-base text-gray-400">
         {event.year}

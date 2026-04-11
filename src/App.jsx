@@ -8,6 +8,7 @@ import Achievements from "./components/Achievements";
 import Tech from "./components/Tech";
 import Contact from "./components/Contact";
 import Services from "./components/Services.jsx";
+import BackToTop from "./utils/BackToTop.jsx";
  
 function App() {
   return (
@@ -22,6 +23,8 @@ function App() {
       <Projects />
       <Contact />
       <Footer />
+
+      <BackToTop />
     </div>
   );
 }

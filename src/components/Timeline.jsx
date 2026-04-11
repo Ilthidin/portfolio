@@ -24,7 +24,7 @@ export default function Timeline() {
     {
       year: "2025",
       title: "Graduate From University",
-      desc: "Graduated from university in 3.5 years with a GPA of 3.78/4.00, proofing strong academic discipline and consistency while continuously developing practical software development skills through projects.",
+      desc: "Graduated from university in 3.5 years with a GPA of 3.78/4.00, proofing strong academic discipline and consistency while continuously developing practical software development skills.",
       icon: "👨🏻‍🎓",
     },
     {
@@ -40,7 +40,7 @@ export default function Timeline() {
   return (
     <div
       id="timeline"
-      className="w-full bg-gradient-to-b from-blue-800/90 via-slate-900 to-gray-900 text-white flex items-center justify-center px-6 py-8 lg:py-16"
+      className="w-full bg-linear-to-b from-black via-slate-900 to-gray-900 text-white flex items-center justify-center px-6 py-8 lg:py-12"
     >
       <div className="w-full max-w-6xl">
         {/* Header */}
@@ -58,7 +58,7 @@ export default function Timeline() {
             viewport={{ once: true, amount: 0.6 }}
             transition={{ delay: 0.5, duration: 2, ease: "easeInOut" }}
             style={{ transformOrigin: "left" }}
-            className="absolute top-6 lg:top-8 left-0 w-full h-[4px] bg-slate-700 rounded-5xl"
+            className="absolute top-6 lg:top-8 left-0 w-full h-1 bg-slate-700 rounded-5xl"
           />
 
           {/* Nodes */}
@@ -76,7 +76,7 @@ export default function Timeline() {
                     className={`w-12 h-12 lg:w-16 lg:h-16 rounded-full flex items-center justify-center text-xl transition-all duration-300 cursor-pointer
                       ${
                         isActive
-                          ? "bg-gradient-to-br from-blue-500 to-green-500 scale-110 shadow-lg shadow-green-500/30"
+                          ? "bg-linear-to-br from-blue-500 to-green-500 scale-110 shadow-lg shadow-green-500/30"
                           : "bg-slate-800 hover:bg-slate-700"
                       }`}
                   >
@@ -97,8 +97,8 @@ export default function Timeline() {
 
         {/* Content Card */}
         <div className="mt-16 flex justify-center">
-          <div className="max-w-xl w-full min-h-70 lg:min-h-0 bg-slate-900 border border-slate-800 rounded-2xl p-8 shadow-xl transition-all duration-500 ">
-            <h3 className="text-xl lg:text-2xl font-semibold mb-3">
+          <div className="max-w-xl w-full min-h-50 md:min-h-40 lg:min-h-0 bg-slate-900 border border-slate-800 rounded-2xl p-4 shadow-xl transition-all duration-500 ">
+            <h3 className="text-xl lg:text-2xl font-semibold mb-2">
               {data[active].title}
             </h3>
             <p className="text-slate-400 leading-relaxed text-justify">

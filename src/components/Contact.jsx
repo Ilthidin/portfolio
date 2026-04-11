@@ -24,13 +24,13 @@ const CONTACTS = [
 
 export default function Contact() {
   return (
-    <section id="contact" className="relative w-full pt-4 pb-16 bg-gray-900">
+    <section id="contact" className="relative w-full py-16 lg:py-12 2xl:py-24 bg-gray-900">
       <div className="mx-auto max-w-5xl px-2 flex items-center justify-center">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.1 }}
+          transition={{ duration: 1, delay: 0.5 }}
           className="card-wrapper pointer-events-none"
         >
           <div className="card-content relative z-10 pointer-events-auto bg-gray-900">
@@ -38,7 +38,7 @@ export default function Contact() {
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 1.2 }}
+              transition={{ duration: 1.5, delay: 0.2 }}
               className="mb-8 text-center"
             >
               <h2 className="text-3xl sm:text-4xl font-bold text-white">
@@ -57,7 +57,7 @@ export default function Contact() {
               variants={{
                 hidden: {},
                 visible: {
-                  transition: { staggerChildren: 0.08 },
+                  transition: { staggerChildren: 0.5 },
                 },
               }}
               className="flex flex-wrap justify-center gap-4 lg:gap-16"
@@ -78,6 +78,8 @@ export default function Contact() {
                     type: "spring",
                     stiffness: 260,
                     damping: 18,
+                    duration: 1.5,
+                    delay: 2,
                   }}
                   className={`group flex h-16 w-16 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white backdrop-blur ${color}`}
                   aria-label={name}

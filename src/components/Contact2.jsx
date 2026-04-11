@@ -55,7 +55,7 @@ export default function Contact() {
           }}
           className="flex flex-wrap justify-center gap-8 lg:gap-16"
         >
-          {CONTACTS.map(({ name, href, icon: Icon, color }) => (
+          {CONTACTS.map(({ name, href, icon: color }) => (
             <motion.a
               key={name}
               href={href}

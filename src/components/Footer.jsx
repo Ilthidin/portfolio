@@ -24,10 +24,10 @@ const SOCIAL_LINKS = [
 ];
 
 const ANIMATION_CONFIG = {
-  brand: { duration: 0.6, delay: 0 },
-  nav: { duration: 0.6, delay: 0.1 },
-  social: { duration: 0.6, delay: 0.2 },
-  copyright: { duration: 0.6, delay: 0.3 },
+  brand: { duration: 1, delay: 0.5 },
+  nav: { duration: 1, delay: 0.6 },
+  social: { duration: 1, delay: 0.7 },
+  copyright: { duration: 1, delay: 1 },
 };
 
 // Subcomponents
@@ -59,7 +59,7 @@ const NavLink = ({ name, href }) => (
   </a>
 );
 
-const SocialLink = ({ icon: Icon, href, label }) => (
+const SocialLink = ({ icon: href, label }) => (
   <motion.a
     href={href}
     whileHover={{ scale: 1.15 }}
@@ -81,19 +81,19 @@ const SocialSection = () => (
   >
     <ul className="text-md hidden md:block list-disc text-gray-300">
       <li className="text-2xl font-bold list-none text-white">What I Do</li>
-      <li className="hover:text-gray-500">
+      <li className="lg:hover:text-gray-500">
         Develop Responsive Websites from Scratch
       </li>
-      <li className="hover:text-gray-500">
+      <li className="lg:hover:text-gray-500">
         Build Modern Web Applications Using React
       </li>
-      <li className="hover:text-gray-500">
+      <li className="lg:hover:text-gray-500">
         Implement Interactive UI Animations
       </li>
-      <li className="hover:text-gray-500">
+      <li className="lg:hover:text-gray-500">
         Enhance User Interface & User Experience (UI/UX)
       </li>
-      <li className="hover:text-gray-500">
+      <li className="lg:hover:text-gray-500">
         Optimize Website Performance & Load Speed
       </li>
     </ul>
@@ -109,7 +109,7 @@ const CopyrightSection = () => {
       whileInView={{ opacity: 1 }}
       transition={ANIMATION_CONFIG.copyright}
       viewport={{ once: true }}
-      className="mt-4 sm:mt-8 border-t border-gray-700 pt-6 text-center text-xs sm:text-sm text-blue-200"
+      className="mt-2 sm:mt-8 border-t border-gray-700 pt-4 text-center text-xs sm:text-sm text-blue-200"
     >
       © {currentYear} Muhammad Syihab. All rights reserved.
     </motion.div>
