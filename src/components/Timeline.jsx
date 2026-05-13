@@ -6,7 +6,7 @@ export default function Timeline() {
     {
       year: "2021",
       title: "University Student",
-      desc: "Started my programming journey in university, developing logic, analitical, and core software engineering skills through academic coursework and personal projects.",
+      desc: "Started my programming journey in university, developing logic, analytical, and core software engineering skills through academic coursework and personal projects.",
       icon: "🎓",
     },
     {
@@ -24,13 +24,13 @@ export default function Timeline() {
     {
       year: "2025",
       title: "Graduate From University",
-      desc: "Graduated from university in 3.5 years with a GPA of 3.78/4.00, proofing strong academic discipline and consistency while continuously developing practical software development skills.",
+      desc: "Graduated from university in 3.5 years with a GPA of 3.78/4.00, proving strong academic discipline and consistency while continuously developing practical software development skills.",
       icon: "👨🏻‍🎓",
     },
     {
       year: "Present",
       title: "Focus on Front-End Path",
-      desc: "Focusing in frontend web development, creating responsive and interactive web applications while continuously improving performance, UI/UX, and modern development workflows.",
+      desc: "Focusing on frontend web development, creating responsive and interactive web applications while continuously improving performance, UI/UX, and modern development workflows.",
       icon: "💼",
     },
   ];
@@ -40,12 +40,12 @@ export default function Timeline() {
   return (
     <div
       id="timeline"
-      className="w-full bg-linear-to-b from-black via-slate-900 to-gray-900 text-white flex items-center justify-center px-6 py-8 lg:py-12"
+      className="w-full bg-linear-to-b from-black via-slate-900 to-gray-900 text-white flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24"
     >
       <div className="w-full max-w-6xl">
         {/* Header */}
-        <div className="text-center mb-8">
-          <h2 className="text-3xl xl:text-5xl font-bold mb-2">Timeline</h2>
+        <div className="text-center mb-10 sm:mb-14">
+          <h2 className="text-3xl xl:text-5xl font-bold mb-3">Timeline</h2>
           <p className="text-slate-400">Strategic milestones over time</p>
         </div>
 
@@ -96,9 +96,9 @@ export default function Timeline() {
         </div>
 
         {/* Content Card */}
-        <div className="mt-16 flex justify-center">
-          <div className="max-w-xl w-full min-h-50 md:min-h-40 lg:min-h-0 bg-slate-900 border border-slate-800 rounded-2xl p-4 shadow-xl transition-all duration-500 ">
-            <h3 className="text-xl lg:text-2xl font-semibold mb-2">
+        <div className="mt-12 sm:mt-16 flex justify-center">
+          <div className="max-w-xl w-full min-h-50 md:min-h-40 lg:min-h-0 bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-xl transition-all duration-500 ">
+            <h3 className="text-xl lg:text-2xl font-semibold mb-3">
               {data[active].title}
             </h3>
             <p className="text-slate-400 leading-relaxed text-justify">

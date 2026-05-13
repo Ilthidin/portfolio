@@ -51,14 +51,14 @@ export default function Tech() {
   const MULTIPLIER = 4;
 
   return (
-    <section className="bg-linear-to-br from-gray-900 to-black py-16 lg:py-20 2xl:py-16 overflow-hidden">
+    <section className="bg-linear-to-br from-gray-900 to-black py-16 sm:py-20 lg:py-24 overflow-hidden">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.5, ease: "easeOut" }}
         viewport={{ once: true, margin: "-100px" }}
       >
-        <h2 className="text-3xl font-bold text-white text-center mb-10">
+        <h2 className="text-3xl font-bold text-white text-center mb-12">
           What I Use to Create Websites
         </h2>
 
@@ -85,7 +85,7 @@ export default function Tech() {
 
 function Item({ tech }) {
   return (
-    <div className="flex flex-col items-center px-8 lg:px-12 shrink-0">
+    <div className="flex flex-col items-center px-8 sm:px-10 lg:px-14 shrink-0">
       <div className="h-24 w-24 mb-4">
         <img
           src={tech.src}

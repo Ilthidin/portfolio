@@ -4,9 +4,9 @@ import { Github, Linkedin, Mail } from "lucide-react";
 // Main Component
 export default function Footer() {
   return (
-    <footer className="bg-gray-800 text-white py-4 px-4 lg:px-18 2xl:px-0">
+    <footer className="bg-gray-800 text-white py-4 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 items-center">
           <BrandSection />
           <SocialSection />
         </div>
@@ -39,13 +39,12 @@ const BrandSection = () => (
     viewport={{ once: true }}
     className="text-center md:text-left"
   >
-    <h2 className="text-xl sm:text-2xl md:text-2xl px-4 lg:px-0 font-bold tracking-tight">
+    <h2 className="text-xl sm:text-2xl md:text-2xl font-bold tracking-tight">
       Thanks for Scrolling This Far
     </h2>
-    <p className="mt-2 text-sm px-4 lg:px-0 sm:text-base md:text-md text-gray-300 lg:pr-32 text-justify">
+    <p className="mt-3 text-sm sm:text-base md:text-md text-gray-300 lg:pr-16 text-justify">
       I designed and developed this website as a personal portfolio to showcase
-      my projects in web development. For futher information, you can acess my
-      linkedin account above. Thanks!
+      my projects in web development. For further information, you can visit my LinkedIn. Thanks!
     </p>
   </motion.div>
 );
@@ -109,10 +108,9 @@ const CopyrightSection = () => {
       whileInView={{ opacity: 1 }}
       transition={ANIMATION_CONFIG.copyright}
       viewport={{ once: true }}
-      className="mt-2 sm:mt-8 border-t border-gray-700 pt-4 text-center text-xs sm:text-sm text-blue-200"
+      className="mt-8 border-t pt-4 border-gray-700 text-center text-xs sm:text-sm text-blue-200"
     >
       © {currentYear} Muhammad Syihab. All rights reserved.
     </motion.div>
   );
 };
-

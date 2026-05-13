@@ -1,27 +1,21 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-import estate from "../assets/projects/estate.webp";
+import evercrest from "../assets/projects/evercrest.webp";
 import hmtif from "../assets/projects/hmtif.webp";
 import taweb from "../assets/projects/taweb.webp";
-import taandroid from "../assets/projects/taandroid.webp";
-import moviemax from "../assets/projects/moviemax.webp";
-import crypto from "../assets/projects/4crypto.webp";
-import parksense from "../assets/projects/parksense.webp";
-import ghibli from "../assets/projects/ghibli.webp";
-import reqroom from "../assets/projects/reqroom.webp";
+import portfolio from "../assets/projects/portfolio.webp";
 
 const PROJECTS = [
   {
-    title: "Real Estate",
-    img: estate,
-    url: "https://ilthidin.github.io/RealEstate/",
+    title: "Evercrest",
+    img: evercrest,
+    url: "https://evercrestrealty.vercel.app/",
   },
-  { title: "HM-TIF Unissula", img: hmtif, url: "https://hmtifunissula.com/" },
   {
-    title: "Retro Anime Generator",
-    img: ghibli,
-    url: "https://github.com/Ilthidin/Retro-Anime-Text-to-Image-Generator",
+    title: "HM-TIF Unissula",
+    img: hmtif,
+    url: "https://hmtifunissula.com/",
   },
   {
     title: "Terbang Aja Web",
@@ -30,24 +24,8 @@ const PROJECTS = [
   },
   {
     title: "Terbang Aja App",
-    img: taandroid,
-    url: "https://github.com/Ilthidin/TerbangAja",
-  },
-  {
-    title: "MovieMax",
-    img: moviemax,
-    url: "https://github.com/Ilthidin/MovieMax",
-  },
-  { title: "4Crypto", img: crypto, url: "https://github.com/Ilthidin/4crypto" },
-  {
-    title: "ParkSense",
-    img: parksense,
-    url: "https://park-sense-kelompok-abhinaya-ofa.streamlit.app/",
-  },
-  {
-    title: "Reqroom",
-    img: reqroom,
-    url: "https://www.figma.com/design/b9OIR4EWHfly6T5xDQEVCO/iimk",
+    img: portfolio,
+    url: "https://yunitasulistiyowati.vercel.app/",
   },
 ];
 
@@ -55,23 +33,38 @@ export default function Carousel3D() {
   const [[index, direction], setIndex] = useState([0, 0]);
   const [isHovered, setIsHovered] = useState(false);
 
+  const timerRef = useRef(null);
+
   const paginate = (dir) => {
     setIndex(([prev]) => {
       let next = prev + dir;
+
       if (next < 0) next = PROJECTS.length - 1;
       if (next >= PROJECTS.length) next = 0;
+
       return [next, dir];
     });
   };
 
-  // Auto slide (pause on hover)
-  useEffect(() => {
-    if (isHovered) return;
-    const interval = setInterval(() => paginate(1), 3000);
-    return () => clearInterval(interval);
-  }, [isHovered]);
+  // Reset auto slide timer
+  const resetAutoSlide = () => {
+    clearTimeout(timerRef.current);
 
-  // 🔥 Swipe power (better mobile feel)
+    if (!isHovered) {
+      timerRef.current = setTimeout(() => {
+        paginate(1);
+      }, 5000);
+    }
+  };
+
+  // Auto slide
+  useEffect(() => {
+    resetAutoSlide();
+
+    return () => clearTimeout(timerRef.current);
+  }, [index, isHovered]);
+
+  // Swipe power
   const swipePower = (offset, velocity) => {
     return Math.abs(offset) * velocity;
   };
@@ -80,8 +73,10 @@ export default function Carousel3D() {
     enter: ({ position }) => {
       if (position === "left")
         return { x: -300, scale: 0.7, opacity: 0, rotateY: 40 };
+
       if (position === "right")
         return { x: 300, scale: 0.7, opacity: 0, rotateY: -40 };
+
       return { opacity: 0 };
     },
 
@@ -129,14 +124,17 @@ export default function Carousel3D() {
 
   function getPosition(i, current, total) {
     if (i === current) return "center";
+
     if (i === (current - 1 + total) % total) return "left";
+
     if (i === (current + 1) % total) return "right";
+
     return "hidden";
   }
 
   return (
-    <section className="bg-gray-900 py-8 lg:py-16 overflow-hidden">
-      <h2 className="text-white text-3xl font-bold text-center mb-4 lg:mb-16 2xl:mb-24">
+    <section id="projects" className="bg-gray-900 py-8 lg:py-24 overflow-hidden">
+      <h2 className="text-white text-3xl sm:text-4xl font-bold text-center lg:mb-16 px-4">
         My Projects
       </h2>
 
@@ -145,6 +143,9 @@ export default function Carousel3D() {
         style={{ perspective: "1200px" }}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
+        onTouchStart={resetAutoSlide}
+        onTouchMove={resetAutoSlide}
+        onTouchEnd={resetAutoSlide}
       >
         <AnimatePresence mode="popLayout">
           {PROJECTS.map((project, i) => {
@@ -165,13 +166,22 @@ export default function Carousel3D() {
                 className="absolute cursor-pointer"
                 drag={position === "center" ? "x" : false}
                 dragConstraints={{ left: 0, right: 0 }}
+                onDragStart={resetAutoSlide}
+                onDrag={resetAutoSlide}
                 onDragEnd={(e, info) => {
-                  const swipe = swipePower(info.offset.x, info.velocity.x);
+                  resetAutoSlide();
+
+                  const swipe = swipePower(
+                    info.offset.x,
+                    info.velocity.x
+                  );
 
                   if (swipe < -5000) paginate(1);
                   else if (swipe > 5000) paginate(-1);
                 }}
                 onClick={() => {
+                  resetAutoSlide();
+
                   if (position === "left") paginate(-1);
                   else if (position === "right") paginate(1);
                   else window.open(project.url, "_blank");
@@ -181,7 +191,7 @@ export default function Carousel3D() {
                   src={project.img}
                   alt={project.title}
                   draggable={false}
-                  className="w-80 h-80 md:w-120 md:h-70 lg:w-180 lg:h-100 2xl:w-240 2xl:h-120  object-cover rounded-2xl shadow-2xl"
+                  className="w-80 h-60 md:w-120 md:h-70 lg:w-180 lg:h-100 2xl:w-240 2xl:h-120 object-fill rounded-2xl shadow-2xl"
                 />
               </motion.div>
             );

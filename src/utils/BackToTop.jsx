@@ -5,7 +5,7 @@ export default function BackToTop() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const heroHeight = window.innerHeight; // assumes Hero = 100vh
+      const heroHeight = window.innerHeight;
       setShow(window.scrollY > heroHeight);
     };
 
@@ -23,7 +23,7 @@ export default function BackToTop() {
   return (
     <button
       onClick={scrollToTop}
-      className={`fixed bottom-6 right-6 z-50 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md text-white border border-white/20 shadow-lg transition-all duration-300
+      className={`fixed bottom-6 right-6 z-50 px-4 py-2 rounded-full cursor-pointer bg-white/10 backdrop-blur-md text-white border border-white/20 shadow-lg transition-all duration-300
         ${show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"}
       `}
     >

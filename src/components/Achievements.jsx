@@ -66,8 +66,8 @@ export default function Achievements() {
   const [activeImage, setActiveImage] = useState(null);
 
   return (
-    <section id="Achievements" className="bg-gray-800 py-20 px-4 max-h-[200vh]">
-      <h2 className="text-4xl font-bold text-white text-center mb-12">
+    <section id="Achievements" className="bg-gray-800 py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-h-[200vh]">
+      <h2 className="text-3xl sm:text-4xl font-bold text-white text-center mb-10 sm:mb-14">
         Achievements
       </h2>
 
@@ -92,7 +92,7 @@ export default function Achievements() {
               alt={item.title}
               className="w-full h-48 object-cover"
             />
-            <div className="p-4">
+            <div className="p-4 sm:p-5">
               <h3 className="text-white font-semibold text-lg">{item.title}</h3>
             </div>
           </motion.div>

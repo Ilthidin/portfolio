@@ -24,8 +24,8 @@ const CONTACTS = [
 
 export default function Contact() {
   return (
-    <section id="contact" className="relative w-full py-16 lg:py-12 2xl:py-24 bg-gray-900">
-      <div className="mx-auto max-w-5xl px-2 flex items-center justify-center">
+    <section id="contact" className="relative w-full py-16 sm:py-20 lg:py-24 bg-gray-900">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 flex items-center justify-center">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}

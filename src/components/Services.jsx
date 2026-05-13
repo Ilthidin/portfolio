@@ -47,9 +47,9 @@ const card = {
 
 export default function Services() {
   return (
-    <section className="w-full bg-linear-to-bl from-gray-900 via-slate-800 to-gray-900 py-8 lg:py-16 bg-gray-950 text-white">
-      <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+    <section className="w-full bg-linear-to-bl from-gray-900 via-slate-800 to-gray-900 py-16 sm:py-20 lg:py-24 bg-gray-950 text-white">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 sm:mb-14">
           Services
         </h2>
 
@@ -65,13 +65,13 @@ export default function Services() {
               key={index}
               variants={card}
               whileHover={{ y: -8 }}
-              className="group rounded-2xl border border-gray-800 bg-gray-900 p-6 hover:border-blue-500 transition"
+              className="group rounded-2xl border border-gray-800 bg-gray-900 p-6 sm:p-7 lg:hover:border-blue-500 transition"
             >
-              <div className="mb-4 h-12 w-12 rounded-lg bg-blue-500/10 flex items-center justify-center group-hover:bg-blue-500/20 transition">
+              <div className="mb-5 h-12 w-12 rounded-lg bg-blue-500/10 flex items-center justify-center lg:group-hover:bg-blue-500/20 transition">
                 <span className="text-blue-400 font-bold">{index + 1}</span>
               </div>
 
-              <h3 className="text:lg lg:text-xl font-semibold mb-2 lg:whitespace-nowrap">
+              <h3 className="text-lg lg:text-xl font-semibold mb-3 lg:whitespace-nowrap">
                 {service.title}
               </h3>
 

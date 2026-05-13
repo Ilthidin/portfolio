@@ -45,7 +45,7 @@ const XIcon = () => (
 const GradientBorderButton = ({ onClick, children }) => (
   <button
     onClick={onClick}
-    className="relative inline-block rounded-full bg-linear-to-r from-green-400 to-blue-500 p-px overflow-hidden"
+    className="relative inline-block rounded-full bg-linear-to-r from-green-400 to-blue-500 p-px overflow-hidden cursor-pointer"
   >
     <motion.span
       initial="rest"
@@ -88,9 +88,9 @@ export default function Navbar() {
         transition={{ duration: 0.6 }}
         className="fixed top-0 left-0 right-0 z-10000 bg-gray-900"
       >
-        <div className="max-w-7xl mx-auto px-4 xl:px-8 2xl:px-0 h-16 flex items-center justify-between">
-          <span className="text-xl font-bold bg-linear-to-r from-green-400 to-blue-500 bg-clip-text text-transparent 2xl:text-2xl">
-            Muhammad Syihab Habibi
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+          <span className="text-xl font-bold bg-linear-to-r from-green-400 to-blue-500 bg-clip-text text-transparent 2xl:text-2xl cursor-default">
+            Muhammad Syihab
           </span>
 
           {/* Mobile button */}
